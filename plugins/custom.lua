@@ -61,13 +61,11 @@ return {
     config = function()
       require("todo-comments").setup {
         keywords = {
-          FIX = { icon = " ", color = "error", alt = { "fix", "fixme", "fixit", "issue" } },
-          TODO = { icon = " ", color = "info", alt = { "todo" } },
           HACK = { icon = " ", color = "warning", alt = { "hack" } },
           WARN = { icon = " ", color = "warning", alt = { "warn" } },
-          PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "perf" } },
-          NOTE = { icon = " ", color = "hint", alt = { "note" } },
-          TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED", "test", "pending" } }
+          PERF = { icon = "󰄋 ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "perf" } },
+          NOTE = { icon = "󰎞 ", color = "hint", alt = { "note" } },
+          TEST = { icon = " ", color = "test", alt = { "TESTING", "PASSED", "FAILED", "test", "pending" } }
         }
       }
     end
@@ -84,20 +82,17 @@ return {
 
   -- Add any additional plugins and configurations as needed
   -- Color scheme
-  { "ellisonleao/gruvbox.nvim" },
-  { "catppuccin/nvim" },
-  {
-    "giusgad/pets.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
-  },
-  { "akinsho/toggleterm.nvim" },
+  -- {
+  --   "giusgad/pets.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+  -- },
 
   -- use super-tab for completion
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-    },
+    -- dependencies = {
+    --   "hrsh7th/cmp-emoji",
+    -- },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local has_words_before = function()
@@ -135,11 +130,5 @@ return {
         end, { "i", "s" }),
       })
     end,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin-mocha",
-    },
   },
 }
