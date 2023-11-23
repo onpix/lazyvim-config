@@ -135,5 +135,11 @@ return {
         end, { "i", "s" }),
       })
     end,
-  }
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-mocha",
+    },
+  },
 }
