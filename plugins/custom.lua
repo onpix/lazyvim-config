@@ -83,4 +83,12 @@ return {
   { "mbbill/undotree" },
 
   -- Add any additional plugins and configurations as needed
+  -- Color scheme
+  { "ellisonleao/gruvbox.nvim" },
+  { "catppuccin/nvim" },
+  {
+    "giusgad/pets.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+  },
+  { "akinsho/toggleterm.nvim" }
 }

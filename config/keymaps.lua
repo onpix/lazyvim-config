@@ -4,7 +4,7 @@
 local map = require("lazyvim.util").safe_keymap_set
 
 -- Normal mode mappings
-map("n", "<Leader>x", ":BufferKill<CR>")
+map("n", "<Leader>x", ":bd<CR>")
 map("n", "<Leader>n", ":Neoformat<CR>")
 map("n", "<Tab>", ":BufferLineCycleNext<CR>")
 map("n", "-", ":Switch<CR>")
