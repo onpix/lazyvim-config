@@ -10,11 +10,13 @@ map("n", "<Tab>", ":BufferLineCycleNext<CR>")
 map("n", "-", ":Switch<CR>")
 map("n", "<Leader>w", ":w<cr>")
 map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
-map("n", "<Leader>u", ":UndotreeToggle<CR>")
+map("n", "<Leader>u", "<cmd>UndotreeToggle<CR>")
 map("n", "<Leader>f", "<Leader>ff")
 map("n", "j", "gj")
 map("n", "k", "gk")
-map("n", "<C-p>", ":wa | !bash upload.sh<CR>")
+-- map("n", "<C-p>", ":wa | !bash upload.sh<CR>")
+map("n", "<C-p>", "<cmd>wa | !bash upload.sh<CR>")
+
 
 -- Insert mode mappings
 map("i", "jk", "<ESC>")
@@ -27,3 +29,32 @@ map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+
+-- function RunScriptWithProgressiveOutput()
+--   local plugin = "My Script Execution"
+--
+--   -- Function to handle script output
+--   local function on_output(event, data)
+--     if data then
+--       for _, line in ipairs(data) do
+--         if line ~= "" then
+--           vim.notify(line, vim.log.levels.INFO, {
+--             title = plugin,
+--           })
+--         end
+--       end
+--     end
+--   end
+--
+--   -- Start the script and capture its output
+--   local job_id = vim.fn.jobstart('bash upload.sh', {
+--     on_stdout = on_output,
+--     on_stderr = on_output,
+--     stdout_buffered = true,
+--     stderr_buffered = true
+--   })
+-- end
+
+-- vim.api.nvim_set_keymap('n', '<C-p>', ':lua RunScriptWithProgressiveOutput()<CR>', { noremap = true, silent = true })
+--

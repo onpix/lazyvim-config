@@ -18,13 +18,8 @@ return {
     end
   },
 
-  -- Vim surround plugin
   { "tpope/vim-surround" },
-
-  -- Visual multi plugin
   { "mg979/vim-visual-multi" },
-
-  -- GitHub Copilot
   {
     "github/copilot.vim",
     config = function()
@@ -49,10 +44,17 @@ return {
       require("nvim-ts-autotag").setup()
     end
   },
-
-  -- Switch.vim for quick switching
   {
     "AndrewRadev/switch.vim"
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = true,
+    opts = {
+      open_mapping = [[<c-\>]],
+      direction = 'float'
+    }
   },
 
   -- Todo comments
@@ -151,9 +153,31 @@ return {
   },
   {
     "rcarriga/nvim-notify",
+    -- enabled = false,
     opts = {
       stages = "static",
       render = "wrapped-compact"
-    }
+    },
+
+  },
+  {
+    "folke/noice.nvim",
+    opts = {
+
+    },
+    config = function()
+      require("noice").setup {
+        messages = {
+          -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+          -- This is a current Neovim limitation.
+          -- enabled = false,             -- enables the Noice messages UI
+          view = "notify",             -- default view for messages
+          view_error = "notify",       -- view for errors
+          view_warn = "notify",        -- view for warnings
+          view_history = "messages",   -- view for :messages
+          view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+        },
+      }
+    end
   }
 }
