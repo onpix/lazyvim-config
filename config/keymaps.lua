@@ -7,6 +7,7 @@ local map = require("lazyvim.util").safe_keymap_set
 map("n", "<Leader>x", ":bd<CR>")
 map("n", "<Leader>n", ":Neoformat<CR>")
 map("n", "<Tab>", ":BufferLineCycleNext<CR>")
+-- vim.api.nvim_set_keymap('n', '<Leader><Leader>', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
 map("n", "-", ":Switch<CR>")
 map("n", "<Leader>w", ":w<cr>")
 map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
